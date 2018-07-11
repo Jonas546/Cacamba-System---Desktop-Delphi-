@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="30">
+      <Unit0>
+        <Filename Value="cacambas.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="26"/>
+        <UsageCount Value="67"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="inicial.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_inicial"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="24" Y="44"/>
+        <UsageCount Value="67"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="logon.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_logon"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="39"/>
+        <CursorPos X="24" Y="41"/>
+        <UsageCount Value="67"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="home.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_home"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="111"/>
+        <CursorPos X="33" Y="125"/>
+        <UsageCount Value="67"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="DM"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="226"/>
+        <CursorPos X="66" Y="229"/>
+        <UsageCount Value="66"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="gerenciar_cacamba.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_cacamba"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="62"/>
+        <CursorPos X="38" Y="53"/>
+        <UsageCount Value="66"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="preco.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_preco"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="32" Y="42"/>
+        <UsageCount Value="64"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="funcionarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_funcionarios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="440"/>
+        <CursorPos X="12" Y="416"/>
+        <UsageCount Value="64"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="financeiro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_financeiro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="64"/>
+        <CursorPos X="6" Y="67"/>
+        <UsageCount Value="63"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="pedidos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_pedidos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="161"/>
+        <CursorPos X="22" Y="396"/>
+        <UsageCount Value="61"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="relatorio_cacamba.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_rel_cacamba"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="39" Y="69"/>
+        <UsageCount Value="56"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="relatorio_financeiro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_rel_financeiro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="6" Y="69"/>
+        <UsageCount Value="55"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="relatorio_financeiro_semanal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="52"/>
+        <CursorPos X="10" Y="53"/>
+        <UsageCount Value="36"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="relatorio_mensal_receitas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="relatorio_mensal_receita"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="78"/>
+        <CursorPos X="18" Y="78"/>
+        <UsageCount Value="35"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="relatorio_semanal_receitas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="relatorio_semanal_receitas"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <CursorPos X="31" Y="54"/>
+        <UsageCount Value="32"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="relatorio_anual_gastos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_relatorio_anual_gastos"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="43"/>
+        <CursorPos X="27" Y="51"/>
+        <UsageCount Value="31"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="relatorio_anual_receitas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_relatorio_anual_receitas"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="68"/>
+        <CursorPos X="3" Y="79"/>
+        <UsageCount Value="31"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="relatorio_mensal_locacao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_relatorio_mensal_locacao"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="30"/>
+        <UsageCount Value="28"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="relatorio_anual_locacao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_relatorio_anual_locacao"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29"/>
+        <UsageCount Value="28"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="logotipo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_logo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="124"/>
+        <CursorPos Y="132"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="C:\projeto_cacamba\funcionarios.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="85"/>
+        <UsageCount Value="8"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="C:\lazarus\lcl\include\dbcustomnavigator.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="473"/>
+        <CursorPos Y="482"/>
+        <UsageCount Value="8"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2089"/>
+        <CursorPos Y="2096"/>
+        <UsageCount Value="10"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="C:\lazarus\lcl\include\dblookup.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="292"/>
+        <CursorPos Y="299"/>
+        <UsageCount Value="9"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="C:\lazarus\lcl\maskedit.pp"/>
+        <UnitName Value="MaskEdit"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2123"/>
+        <CursorPos X="25" Y="2133"/>
+        <UsageCount Value="8"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3260"/>
+        <CursorPos Y="3268"/>
+        <UsageCount Value="8"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5636"/>
+        <CursorPos Y="5644"/>
+        <UsageCount Value="8"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="C:\lazarus\lcl\include\customedit.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="610"/>
+        <CursorPos Y="594"/>
+        <UsageCount Value="8"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="C:\Users\Admin\Downloads\fortesreport\rlreport.pas"/>
+        <UnitName Value="RLReport"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="8066"/>
+        <CursorPos Y="8074"/>
+        <UsageCount Value="10"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="C:\lazarus\lcl\include\picture.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="738"/>
+        <CursorPos Y="745"/>
+        <UsageCount Value="10"/>
+      </Unit29>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="home.pas"/>
+        <Caret Line="87" Column="31" TopLine="85"/>
+      </Position1>
+      <Position2>
+        <Filename Value="home.pas"/>
+        <Caret Line="77" Column="24" TopLine="75"/>
+      </Position2>
+      <Position3>
+        <Filename Value="logon.pas"/>
+        <Caret Line="47" Column="9" TopLine="45"/>
+      </Position3>
+      <Position4>
+        <Filename Value="home.pas"/>
+        <Caret Line="87" Column="31" TopLine="85"/>
+      </Position4>
+      <Position5>
+        <Filename Value="dm.pas"/>
+        <Caret Line="178" TopLine="178"/>
+      </Position5>
+      <Position6>
+        <Filename Value="dm.pas"/>
+        <Caret Line="398" Column="8" TopLine="387"/>
+      </Position6>
+      <Position7>
+        <Filename Value="dm.pas"/>
+        <Caret Line="344" Column="8" TopLine="336"/>
+      </Position7>
+      <Position8>
+        <Filename Value="dm.pas"/>
+        <Caret Line="193" Column="8" TopLine="185"/>
+      </Position8>
+      <Position9>
+        <Filename Value="dm.pas"/>
+        <Caret Line="142" Column="8" TopLine="134"/>
+      </Position9>
+      <Position10>
+        <Filename Value="home.pas"/>
+        <Caret Line="87" Column="31" TopLine="76"/>
+      </Position10>
+      <Position11>
+        <Filename Value="home.pas"/>
+        <Caret Line="89" Column="31" TopLine="78"/>
+      </Position11>
+      <Position12>
+        <Filename Value="home.pas"/>
+        <Caret Line="157" Column="25" TopLine="150"/>
+      </Position12>
+      <Position13>
+        <Filename Value="home.pas"/>
+        <Caret Line="85" Column="5" TopLine="70"/>
+      </Position13>
+      <Position14>
+        <Filename Value="home.pas"/>
+        <Caret Line="162" Column="35" TopLine="160"/>
+      </Position14>
+      <Position15>
+        <Filename Value="home.pas"/>
+        <Caret Line="9" Column="48" TopLine="6"/>
+      </Position15>
+      <Position16>
+        <Filename Value="home.pas"/>
+        <Caret Line="186" Column="22" TopLine="181"/>
+      </Position16>
+      <Position17>
+        <Filename Value="home.pas"/>
+        <Caret Line="161" Column="6" TopLine="154"/>
+      </Position17>
+      <Position18>
+        <Filename Value="home.pas"/>
+        <Caret Line="160" Column="6" TopLine="153"/>
+      </Position18>
+      <Position19>
+        <Filename Value="financeiro.pas"/>
+        <Caret Line="84" TopLine="79"/>
+      </Position19>
+      <Position20>
+        <Filename Value="financeiro.pas"/>
+        <Caret Line="102" Column="3" TopLine="91"/>
+      </Position20>
+      <Position21>
+        <Filename Value="financeiro.pas"/>
+        <Caret Line="60" Column="6" TopLine="58"/>
+      </Position21>
+      <Position22>
+        <Filename Value="home.pas"/>
+        <Caret Line="159" Column="69" TopLine="159"/>
+      </Position22>
+      <Position23>
+        <Filename Value="home.pas"/>
+        <Caret Line="106" Column="35" TopLine="102"/>
+      </Position23>
+      <Position24>
+        <Filename Value="home.pas"/>
+        <Caret Line="103" Column="6" TopLine="101"/>
+      </Position24>
+      <Position25>
+        <Filename Value="home.pas"/>
+        <Caret Line="114" Column="34" TopLine="104"/>
+      </Position25>
+      <Position26>
+        <Filename Value="logotipo.pas"/>
+        <Caret Line="133" Column="5" TopLine="124"/>
+      </Position26>
+      <Position27>
+        <Filename Value="home.pas"/>
+        <Caret Line="114" Column="34" TopLine="104"/>
+      </Position27>
+      <Position28>
+        <Filename Value="logotipo.pas"/>
+        <Caret Line="133" Column="7" TopLine="124"/>
+      </Position28>
+      <Position29>
+        <Filename Value="dm.pas"/>
+        <Caret Line="230" Column="6" TopLine="226"/>
+      </Position29>
+      <Position30>
+        <Filename Value="home.pas"/>
+        <Caret Line="114" Column="5" TopLine="104"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

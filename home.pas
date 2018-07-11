@@ -1,0 +1,206 @@
+unit home;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
+  ExtCtrls, StdCtrls, DbCtrls, Clipbrd, Windows;
+
+type
+
+  { Tt_home }
+
+  Tt_home = class(TForm)
+    DBImage1: TDBImage;
+    Label1: TLabel;
+    lb_logo: TLabel;
+    Label3: TLabel;
+    MainMenu1: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    sm_rel_financeiro: TMenuItem;
+    sm_controle: TMenuItem;
+    sm_funcionarios: TMenuItem;
+    sm_pedidos: TMenuItem;
+    sm_rel_cacamba: TMenuItem;
+    sm_cacamba: TMenuItem;
+    mm_sair: TMenuItem;
+    mm_financeiro: TMenuItem;
+    mm_funcionarios: TMenuItem;
+    mm_preco: TMenuItem;
+    mm_pedidos: TMenuItem;
+    mm_cacambas: TMenuItem;
+    procedure DBImage1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure MenuItem1Click(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem5Click(Sender: TObject);
+    procedure MenuItem6Click(Sender: TObject);
+    procedure MenuItem7Click(Sender: TObject);
+    procedure MenuItem8Click(Sender: TObject);
+    procedure MenuItem9Click(Sender: TObject);
+    procedure mm_precoClick(Sender: TObject);
+    procedure mm_sairClick(Sender: TObject);
+    procedure sm_cacambaClick(Sender: TObject);
+    procedure sm_controleClick(Sender: TObject);
+    procedure sm_funcionariosClick(Sender: TObject);
+    procedure sm_pedidosClick(Sender: TObject);
+    procedure sm_rel_cacambaClick(Sender: TObject);
+    procedure sm_rel_financeiroClick(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  t_home: Tt_home;
+
+implementation
+
+{$R *.lfm}
+
+{ Tt_home }
+uses gerenciar_cacamba, preco, funcionarios, financeiro, pedidos, relatorio_cacamba, relatorio_financeiro, DM, relatorio_financeiro_semanal, relatorio_mensal_receitas, relatorio_semanal_receitas, relatorio_anual_gastos, relatorio_anual_receitas, relatorio_mensal_locacao, relatorio_anual_locacao, logotipo;
+
+function GetComputerNameFunc : string;
+var ipbuffer : string;
+      nsize : dword;
+begin
+   nsize := 255;
+   SetLength(ipbuffer,nsize);
+   if GetComputerName(pchar(ipbuffer),nsize) then
+      result := ipbuffer;
+end;
+
+procedure Tt_home.mm_sairClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure Tt_home.mm_precoClick(Sender: TObject);
+begin
+  t_preco.ShowModal;
+end;
+
+procedure Tt_home.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  DMC.query_img.Active:=false;
+end;
+
+procedure Tt_home.FormCreate(Sender: TObject);
+begin
+end;
+
+procedure Tt_home.DBImage1Click(Sender: TObject);
+begin
+
+end;
+
+procedure Tt_home.FormShow(Sender: TObject);
+begin
+
+  //DMC.dbSistema.DatabaseName:='C:\cacamba_projeto\database\CP.FDB';
+  DMC.dbSistema.HostName:=GetComputerNameFunc;
+  DMC.dbSistema.Connected:=true;
+  DMC.SQLTransaction1.Active:=true;
+
+  DMC.query_img.Active:=true;
+
+  if DMC.query_img.IsEmpty=false then
+     begin
+          DBImage1.Picture.LoadFromFile(DMC.query_img.Fields[0].AsString);
+          lb_logo.Visible:=false;
+     end;
+
+end;
+
+procedure Tt_home.MenuItem1Click(Sender: TObject);
+begin
+  t_Form1.RLReport1.Preview();
+end;
+
+procedure Tt_home.MenuItem2Click(Sender: TObject);
+begin
+  t_relatorio_semanal_receitas.RLReport1.Preview();
+end;
+
+procedure Tt_home.MenuItem3Click(Sender: TObject);
+begin
+  t_relatorio_mensal_receita.RLReport1.Preview();
+end;
+
+procedure Tt_home.MenuItem4Click(Sender: TObject);
+begin
+  t_relatorio_anual_gastos.RLReport1.Preview();
+end;
+
+procedure Tt_home.MenuItem5Click(Sender: TObject);
+begin
+  t_relatorio_anual_receitas.RLReport1.Preview();
+end;
+
+procedure Tt_home.MenuItem6Click(Sender: TObject);
+begin
+  t_relatorio_mensal_locacao.RLReport1.Preview();
+end;
+
+procedure Tt_home.MenuItem7Click(Sender: TObject);
+begin
+  t_relatorio_anual_locacao.RLReport1.Preview();
+end;
+
+procedure Tt_home.MenuItem8Click(Sender: TObject);
+begin
+  t_home.Close;
+  t_logo.Show;
+end;
+
+procedure Tt_home.MenuItem9Click(Sender: TObject);
+begin
+end;
+
+procedure Tt_home.sm_cacambaClick(Sender: TObject);
+begin
+     t_cacamba.ShowModal;
+end;
+
+procedure Tt_home.sm_controleClick(Sender: TObject);
+begin
+  t_financeiro.ShowModal;
+end;
+
+procedure Tt_home.sm_funcionariosClick(Sender: TObject);
+begin
+  t_funcionarios.ShowModal;
+end;
+
+procedure Tt_home.sm_pedidosClick(Sender: TObject);
+begin
+  t_pedidos.ShowModal;
+end;
+
+procedure Tt_home.sm_rel_cacambaClick(Sender: TObject);
+begin
+  t_rel_cacamba.RLReport1.Preview();
+end;
+
+procedure Tt_home.sm_rel_financeiroClick(Sender: TObject);
+begin
+  t_rel_financeiro.RLReport1.Preview();
+end;
+
+end.
+

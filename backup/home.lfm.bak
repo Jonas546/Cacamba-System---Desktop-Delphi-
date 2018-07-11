@@ -1,0 +1,136 @@
+object t_home: Tt_home
+  Left = 256
+  Height = 263
+  Top = 120
+  Width = 483
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Home'
+  ClientHeight = 243
+  ClientWidth = 483
+  Color = clHighlightText
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.6.4.0'
+  object Label1: TLabel
+    Left = 256
+    Height = 45
+    Top = 72
+    Width = 188
+    Caption = 'Caçambas'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clGray
+    Font.Height = -37
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBImage1: TDBImage
+    Left = 48
+    Height = 120
+    Top = 56
+    Width = 170
+    OnClick = DBImage1Click
+  end
+  object Label3: TLabel
+    Left = 296
+    Height = 39
+    Top = 120
+    Width = 117
+    Caption = 'System'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clGray
+    Font.Height = -32
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object MainMenu1: TMainMenu
+    left = 424
+    top = 16
+    object mm_cacambas: TMenuItem
+      Caption = 'Caçambas'
+      object sm_cacamba: TMenuItem
+        Caption = 'Gerenciar Caçamba'
+        OnClick = sm_cacambaClick
+      end
+      object sm_rel_cacamba: TMenuItem
+        Caption = 'Relatório Semanal de Locação'
+        OnClick = sm_rel_cacambaClick
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'Relatório Mensal de Locação'
+        OnClick = MenuItem6Click
+      end
+      object MenuItem7: TMenuItem
+        Caption = 'Relatório Anual de Locação'
+        OnClick = MenuItem7Click
+      end
+    end
+    object mm_pedidos: TMenuItem
+      Caption = 'Pedidos'
+      object sm_pedidos: TMenuItem
+        Caption = 'Gerenciar Pedidos'
+        OnClick = sm_pedidosClick
+      end
+    end
+    object mm_preco: TMenuItem
+      Caption = 'Definir Preço'
+      OnClick = mm_precoClick
+    end
+    object mm_funcionarios: TMenuItem
+      Caption = 'Funcionarios'
+      object sm_funcionarios: TMenuItem
+        Caption = 'Gerenciar Funcionarios'
+        OnClick = sm_funcionariosClick
+      end
+    end
+    object mm_financeiro: TMenuItem
+      Caption = 'Financeiro'
+      object sm_controle: TMenuItem
+        Caption = 'Controle'
+        OnClick = sm_controleClick
+      end
+      object MenuItem1: TMenuItem
+        Caption = 'Relatório Semanal de Gastos'
+        OnClick = MenuItem1Click
+      end
+      object sm_rel_financeiro: TMenuItem
+        Caption = 'Relatório Mensal de Gastos'
+        OnClick = sm_rel_financeiroClick
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Relatório Anual de Gastos'
+        OnClick = MenuItem4Click
+      end
+      object MenuItem2: TMenuItem
+        Caption = 'Relatorio Semanal de Receitas'
+        OnClick = MenuItem2Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Relatório Mensal de Receitas'
+        OnClick = MenuItem3Click
+      end
+      object MenuItem5: TMenuItem
+        Caption = 'Relatório Anual de Receitas'
+        OnClick = MenuItem5Click
+      end
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'Logotipo'
+      OnClick = MenuItem8Click
+    end
+    object mm_sair: TMenuItem
+      Caption = 'Sair'
+      OnClick = mm_sairClick
+    end
+  end
+end

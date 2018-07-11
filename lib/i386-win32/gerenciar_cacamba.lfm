@@ -1,0 +1,137 @@
+object t_cacamba: Tt_cacamba
+  Left = 256
+  Height = 240
+  Top = 120
+  Width = 392
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Gerenciar Caçamba'
+  ClientHeight = 240
+  ClientWidth = 392
+  Color = clHighlightText
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.6.4.0'
+  object DBGrid1: TDBGrid
+    Left = 32
+    Height = 112
+    Top = 96
+    Width = 328
+    Color = clWindow
+    Columns = <>
+    DataSource = DMC.ds_cacamba
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 32
+    Height = 25
+    Top = 64
+    Width = 329
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 329
+    DataSource = DMC.ds_cacamba
+    OnClick = DBNavigator1Click
+    Options = []
+    TabOrder = 1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbEdit, nbPost, nbCancel, nbRefresh]
+  end
+  object Label1: TLabel
+    Left = 32
+    Height = 18
+    Top = 37
+    Width = 18
+    Caption = 'ID'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clGray
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 120
+    Height = 18
+    Top = 37
+    Width = 67
+    Caption = 'Caçamba'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clGray
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 264
+    Height = 18
+    Top = 37
+    Width = 44
+    Caption = 'Busca'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clGray
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object txt_cacamba: TEdit
+    Left = 328
+    Height = 23
+    Top = 32
+    Width = 32
+    OnChange = txt_cacambaChange
+    TabOrder = 2
+  end
+  object db_txt_id: TDBEdit
+    Left = 64
+    Height = 23
+    Top = 32
+    Width = 32
+    DataField = 'COD_CACAMBA'
+    DataSource = DMC.ds_cacamba
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object db_txt_cacamba: TDBEdit
+    Left = 200
+    Height = 23
+    Top = 32
+    Width = 32
+    DataField = 'N_CACAMBA'
+    DataSource = DMC.ds_cacamba
+    CharCase = ecNormal
+    MaxLength = 4
+    TabOrder = 4
+  end
+  object db_txt_status: TDBEdit
+    Left = 32
+    Height = 23
+    Top = 216
+    Width = 80
+    DataField = 'STATUS'
+    DataSource = DMC.ds_cacamba
+    CharCase = ecNormal
+    MaxLength = 20
+    TabOrder = 5
+    Visible = False
+  end
+end

@@ -1,0 +1,1438 @@
+object DMC: TDMC
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 452
+  HorizontalOffset = 91
+  VerticalOffset = 119
+  Width = 883
+  object dbSistema: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'CP.FDB'
+    KeepConnection = False
+    Password = 'sbbhkk'
+    Transaction = SQLTransaction1
+    UserName = 'sysdba'
+    Options = []
+    CheckTransactionParams = False
+    left = 32
+    top = 16
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = dbSistema
+    Options = []
+    left = 120
+    top = 16
+  end
+  object query_cacamba: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'N_CACAMBA'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    AfterDelete = query_cacambaAfterDelete
+    AfterEdit = query_cacambaAfterEdit
+    AfterPost = query_cacambaAfterPost
+    OnNewRecord = query_cacambaNewRecord
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from cacamba order by cod_cacamba asc;'
+    )
+    Options = []
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 216
+    top = 16
+  end
+  object ds_cacamba: TDataSource
+    DataSet = query_cacamba
+    left = 296
+    top = 16
+  end
+  object query_preco: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'PRECO_LOCACAO'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end>
+    AfterEdit = query_precoAfterEdit
+    AfterPost = query_precoAfterPost
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from valor_locacao;'
+    )
+    Options = []
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 368
+    top = 16
+  end
+  object ds_preco: TDataSource
+    DataSet = query_preco
+    left = 440
+    top = 16
+  end
+  object query_funcionario: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CARGO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'SALARIO'
+        DataType = ftString
+        Precision = -1
+        Size = 9
+      end    
+      item
+        Name = 'TEL'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'ENDERECO'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CEP'
+        DataType = ftString
+        Precision = -1
+        Size = 9
+      end    
+      item
+        Name = 'CPF'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RG'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'DATA_ENTRADA'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_SAIDA'
+        DataType = ftDate
+        Precision = -1
+      end>
+    AfterDelete = query_funcionarioAfterDelete
+    AfterEdit = query_funcionarioAfterEdit
+    AfterPost = query_funcionarioAfterPost
+    BeforePost = query_funcionarioBeforePost
+    OnNewRecord = query_funcionarioNewRecord
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from funcionario;'
+    )
+    Options = []
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 512
+    top = 16
+  end
+  object ds_funcionario: TDataSource
+    DataSet = query_funcionario
+    left = 600
+    top = 16
+  end
+  object query_financeiro: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_OPERACAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'COD_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'DATA'
+        DataType = ftDate
+        Precision = -1
+      end>
+    AfterDelete = query_financeiroAfterDelete
+    AfterEdit = query_financeiroAfterEdit
+    AfterPost = query_financeiroAfterPost
+    BeforePost = query_financeiroBeforePost
+    OnNewRecord = query_financeiroNewRecord
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from financeiro order by cod_operacao asc;'
+    )
+    Options = []
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 32
+    top = 80
+  end
+  object ds_financeiro: TDataSource
+    DataSet = query_financeiro
+    left = 120
+    top = 80
+  end
+  object query_ativos: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CARGO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'SALARIO'
+        DataType = ftString
+        Precision = -1
+        Size = 9
+      end    
+      item
+        Name = 'TEL'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'ENDERECO'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CEP'
+        DataType = ftString
+        Precision = -1
+        Size = 9
+      end    
+      item
+        Name = 'CPF'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RG'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'DATA_ENTRADA'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_SAIDA'
+        DataType = ftDate
+        Precision = -1
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from funcionario where data_saida is null;'
+    )
+    Options = []
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 216
+    top = 80
+  end
+  object ds_ativos: TDataSource
+    DataSet = query_ativos
+    left = 296
+    top = 80
+  end
+  object query_pedido: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_PEDIDO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CLIENTE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'LOCAL'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'CD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'DATA_LOCACAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_DEVOLUCCAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC_DEV'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end>
+    AfterDelete = query_pedidoAfterDelete
+    AfterEdit = query_pedidoAfterEdit
+    AfterPost = query_pedidoAfterPost
+    BeforePost = query_pedidoBeforePost
+    OnNewRecord = query_pedidoNewRecord
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from pedido order by cod_pedido asc;'
+    )
+    Options = []
+    Params = <>
+    left = 368
+    top = 80
+  end
+  object ds_pedido: TDataSource
+    DataSet = query_pedido
+    left = 440
+    top = 80
+  end
+  object query_motorista: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CARGO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'SALARIO'
+        DataType = ftString
+        Precision = -1
+        Size = 9
+      end    
+      item
+        Name = 'TEL'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'ENDERECO'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CEP'
+        DataType = ftString
+        Precision = -1
+        Size = 9
+      end    
+      item
+        Name = 'CPF'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RG'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'DATA_ENTRADA'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_SAIDA'
+        DataType = ftDate
+        Precision = -1
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from funcionario where (cargo = ''Motorista'' or cargo = ''motorista'' or cargo = ''MOTORISTA'') and data_saida is null;'
+    )
+    Options = []
+    Params = <>
+    left = 512
+    top = 80
+  end
+  object ds_motorista: TDataSource
+    DataSet = query_motorista
+    left = 600
+    top = 80
+  end
+  object query_livres: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'N_CACAMBA'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from cacamba where status = ''Livre'' order by cod_cacamba asc;'
+    )
+    Options = []
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 32
+    top = 144
+  end
+  object ds_livres: TDataSource
+    DataSet = query_livres
+    left = 120
+    top = 144
+  end
+  object qr_c_status: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'N_CACAMBA'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from cacamba;'
+    )
+    Options = []
+    Params = <>
+    left = 216
+    top = 144
+  end
+  object ds_c_status: TDataSource
+    DataSet = qr_c_status
+    left = 296
+    top = 144
+  end
+  object qr_rel_financeiro_total: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'SUM'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select sum(cast(replace(replace(valor, ''.'', ''''), '','', ''.'') as numeric(5,2))) from financeiro where data >= CURRENT_DATE - 30;'
+    )
+    Options = []
+    Params = <>
+    left = 368
+    top = 144
+  end
+  object ds_fin_total: TDataSource
+    DataSet = qr_rel_financeiro_total
+    left = 440
+    top = 144
+  end
+  object query_rel_financeiro: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_OPERACAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CARGO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'DATA'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select f.cod_operacao, f.descricao, n.nome, n.cargo, f.data, f.valor from financeiro as f, funcionario as n where f.cod_func = n.id_func and f.data >= CURRENT_DATE - 30 order by f.cod_operacao asc;'
+    )
+    Options = []
+    Params = <>
+    left = 512
+    top = 144
+  end
+  object ds_rel_financeiro: TDataSource
+    DataSet = query_rel_financeiro
+    left = 600
+    top = 144
+  end
+  object query_relatorio_gastos_semanal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_OPERACAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CARGO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'DATA'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select f.cod_operacao, f.descricao, n.nome, n.cargo, f.data, f.valor from financeiro as f, funcionario as n where f.cod_func = n.id_func and f.data >= CURRENT_DATE - 7 order by f.cod_operacao asc;'
+    )
+    Options = []
+    Params = <>
+    left = 48
+    top = 208
+  end
+  object ds_rel_gastos_semanal: TDataSource
+    DataSet = query_relatorio_gastos_semanal
+    left = 48
+    top = 272
+  end
+  object gasto_semanal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'SUM'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select sum(cast(replace(replace(valor, ''.'', ''''), '','', ''.'') as numeric(5,2))) from financeiro where data >= CURRENT_DATE - 7;'
+    )
+    Options = []
+    Params = <>
+    left = 176
+    top = 208
+  end
+  object ds_gasto_semanal: TDataSource
+    DataSet = gasto_semanal
+    left = 176
+    top = 272
+  end
+  object qr_rel_mensal_receita: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_PEDIDO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CLIENTE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'LOCAL'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'CD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'DATA_LOCACAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_DEVOLUCCAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC_DEV'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from pedido where status = ''Fechado'' and data_devoluccao >= CURRENT_DATE - 30;'
+    )
+    Options = []
+    Params = <>
+    left = 296
+    top = 208
+  end
+  object ds_rel_mensal_receita: TDataSource
+    DataSet = qr_rel_mensal_receita
+    left = 296
+    top = 272
+  end
+  object total_mensal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'SUM'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select sum(cast(replace(replace(valor, ''.'', ''''), '','', ''.'') as numeric(5,2))) from pedido where data_devoluccao >= CURRENT_DATE - 30 and status = ''Fechado'';'
+    )
+    Options = []
+    Params = <>
+    left = 416
+    top = 208
+  end
+  object ds_total_mensal: TDataSource
+    DataSet = total_mensal
+    left = 416
+    top = 272
+  end
+  object qr_rel_semanal_receita: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_PEDIDO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CLIENTE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'LOCAL'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'CD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'DATA_LOCACAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_DEVOLUCCAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC_DEV'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from pedido where status = ''Fechado'' and data_devoluccao >= CURRENT_DATE - 7;'
+    )
+    Options = []
+    Params = <>
+    left = 520
+    top = 208
+  end
+  object ds_rel_semanal_receita: TDataSource
+    DataSet = qr_rel_semanal_receita
+    left = 520
+    top = 272
+  end
+  object total_semanal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'SUM'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select sum(cast(replace(replace(valor, ''.'', ''''), '','', ''.'') as numeric(5,2))) from pedido where data_devoluccao >= CURRENT_DATE - 7 and status = ''Fechado'';'
+    )
+    Options = []
+    Params = <>
+    left = 624
+    top = 208
+  end
+  object ds_total_semanal: TDataSource
+    DataSet = total_semanal
+    left = 624
+    top = 272
+  end
+  object qr_rel_anual_gastos: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_OPERACAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'CARGO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'DATA'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select f.cod_operacao, f.descricao, n.nome, n.cargo, f.data, f.valor from financeiro as f, funcionario as n where f.cod_func = n.id_func and f.data >= CURRENT_DATE - 365 order by f.cod_operacao asc;'
+    )
+    Options = []
+    Params = <>
+    left = 704
+    top = 16
+  end
+  object ds_rel_anual_gastos: TDataSource
+    DataSet = qr_rel_anual_gastos
+    left = 816
+    top = 16
+  end
+  object gasto_anual: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'SUM'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select sum(cast(replace(replace(valor, ''.'', ''''), '','', ''.'') as numeric(5,2))) from financeiro where data >= CURRENT_DATE - 365;'
+    )
+    Options = []
+    Params = <>
+    left = 704
+    top = 80
+  end
+  object ds_gasto_anual: TDataSource
+    DataSet = gasto_anual
+    left = 816
+    top = 80
+  end
+  object qr_rel_anual_receita: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_PEDIDO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CLIENTE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'LOCAL'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'CD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'DATA_LOCACAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_DEVOLUCCAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC_DEV'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from pedido where status = ''Fechado'' and data_devoluccao >= CURRENT_DATE - 365;'
+    )
+    Options = []
+    Params = <>
+    left = 712
+    top = 144
+  end
+  object ds_rel_anual_receita: TDataSource
+    DataSet = qr_rel_anual_receita
+    left = 816
+    top = 144
+  end
+  object total_anual: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'SUM'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select sum(cast(replace(replace(valor, ''.'', ''''), '','', ''.'') as numeric(5,2))) from pedido where data_devoluccao >= CURRENT_DATE - 365 and status = ''Fechado'';'
+    )
+    Options = []
+    Params = <>
+    left = 704
+    top = 208
+  end
+  object ds_total_anual: TDataSource
+    DataSet = total_anual
+    left = 816
+    top = 208
+  end
+  object cacamba_semanal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_PEDIDO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CLIENTE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'LOCAL'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'CD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'DATA_LOCACAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_DEVOLUCCAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC_DEV'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'COD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'N_CACAMBA'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'STATUS_1'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select p.*, c.* from pedido as p, cacamba as c where c.n_cacamba = p.cd_cacamba and p.data_locacao >= CURRENT_DATE - 7 order by c.cod_cacamba asc;'
+    )
+    Options = []
+    Params = <>
+    left = 720
+    top = 272
+  end
+  object ds_cacamba_semanal: TDataSource
+    DataSet = cacamba_semanal
+    left = 816
+    top = 272
+  end
+  object total_c_semanal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COUNT'
+        DataType = ftLargeint
+        Precision = -1
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select count (cd_cacamba) from pedido where data_locacao >= CURRENT_DATE - 7;'
+    )
+    Options = []
+    Params = <>
+    left = 48
+    top = 336
+  end
+  object ds_total_c_semanal: TDataSource
+    DataSet = total_c_semanal
+    left = 179
+    top = 336
+  end
+  object total_c_mensal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COUNT'
+        DataType = ftLargeint
+        Precision = -1
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select count (cd_cacamba) from pedido where data_locacao >= CURRENT_DATE - 30;'
+    )
+    Options = []
+    Params = <>
+    left = 520
+    top = 336
+  end
+  object ds_total_c_mensal: TDataSource
+    DataSet = total_c_mensal
+    left = 624
+    top = 336
+  end
+  object cacamba_mensal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_PEDIDO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CLIENTE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'LOCAL'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'CD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'DATA_LOCACAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_DEVOLUCCAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC_DEV'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'COD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'N_CACAMBA'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'STATUS_1'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select p.*, c.* from pedido as p, cacamba as c where c.n_cacamba = p.cd_cacamba and p.data_locacao >= CURRENT_DATE - 30 order by c.cod_cacamba asc;'
+    )
+    Options = []
+    Params = <>
+    left = 296
+    top = 336
+  end
+  object ds_cacamba_mensal: TDataSource
+    DataSet = cacamba_mensal
+    left = 416
+    top = 336
+  end
+  object cacamba_anual: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COD_PEDIDO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CLIENTE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'LOCAL'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'CD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'DATA_LOCACAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_DEVOLUCCAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'CD_FUNC_DEV'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'COD_CACAMBA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'N_CACAMBA'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'STATUS_1'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select p.*, c.* from pedido as p, cacamba as c where c.n_cacamba = p.cd_cacamba and p.data_locacao >= CURRENT_DATE - 365 order by c.cod_cacamba asc;'
+    )
+    Options = []
+    Params = <>
+    left = 728
+    top = 336
+  end
+  object ds_cacamba_anual: TDataSource
+    DataSet = cacamba_anual
+    left = 816
+    top = 336
+  end
+  object total_c_anual: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'COUNT'
+        DataType = ftLargeint
+        Precision = -1
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select count (cd_cacamba) from pedido where data_locacao >= CURRENT_DATE - 365;'
+    )
+    Options = []
+    Params = <>
+    left = 44
+    top = 400
+  end
+  object ds_total_c_anual: TDataSource
+    DataSet = total_c_anual
+    left = 179
+    top = 400
+  end
+  object qr_imagen: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'CAMINHO'
+        DataType = ftString
+        Precision = -1
+        Size = 200
+      end    
+      item
+        Name = 'KEY'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from imagem;'
+    )
+    Options = []
+    Params = <>
+    left = 296
+    top = 400
+  end
+  object ds_imagem: TDataSource
+    DataSet = qr_imagen
+    left = 416
+    top = 400
+  end
+  object query_img: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'CAMINHO'
+        DataType = ftString
+        Precision = -1
+        Size = 200
+      end>
+    Database = dbSistema
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from imagem;'
+    )
+    Options = []
+    Params = <>
+    left = 520
+    top = 400
+  end
+end
